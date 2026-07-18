@@ -1,7 +1,7 @@
 const {Router}=require("express");
 
 const authController=require("../controllers/auth.controller")
-
+const authMiddleware=require("../middlewares/auth.middleware")
 const authRouter=Router();
 // post api to register api/auth/reigister
 
@@ -34,7 +34,7 @@ authRouter.get("/logout",authController.logoutUserController);
  * @description get the profile of the logged in user
  * @access private 
  */
-authRouter.get("/get-me",authController.getProfileController);
+authRouter.get("/get-me",authMiddleware.authUser,authController.getMeController);
 
 module.exports=authRouter
         

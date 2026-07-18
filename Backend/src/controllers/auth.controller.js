@@ -85,7 +85,7 @@ const jwt=require("jsonwebtoken");
             messege:"invalid email or password"
         })
     }   const token=jwt.sign(
-        {id: user._id,username:user.username},
+        {id: user._id,Username:user.Username},
         process.env.jwt_secret,
         {expiresIn:"1d"}
     )
@@ -95,7 +95,7 @@ const jwt=require("jsonwebtoken");
     messege:"user loggedIn successfully",
     user:{
         id:user._id,
-        username:user.username,
+        Username:user.Username,
         email:user.email
     }
  })
@@ -119,7 +119,26 @@ async function logoutUserController(req,res){
     })
 }
 
+/**
+ * @name getMeController
+ * @description get the currently logged-in user's information
+ * @access private
+ */
+async function getMeController(req,res){
+    const user=await userModel.findById(req.user.id);
+
+    res.status(200).json({
+        messege:"user fetched successfully",
+        user:{
+            id:user._id,
+            Username:user.Username,
+            email:user.email
+        }
+    });
+        }
 
 
 
-module.exports={registerUser, loginUserController, logoutUserController}
+
+
+module.exports={registerUser, loginUserController, logoutUserController, getMeController};
