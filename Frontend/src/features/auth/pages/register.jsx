@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import "./auth.scss";
 
 const Register = () => {
@@ -9,7 +10,6 @@ const Register = () => {
 
   return (
     <main className="auth-page">
-      {/* Background Glow */}
       <div className="top-glow"></div>
       <div className="bottom-glow"></div>
 
@@ -19,7 +19,6 @@ const Register = () => {
         <h2>Create Account</h2>
 
         <form onSubmit={handleSubmit}>
-          {/* Full Name */}
           <div className="input-group">
             <label htmlFor="name">Full Name</label>
 
@@ -31,7 +30,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Email */}
           <div className="input-group">
             <label htmlFor="email">Email Address</label>
 
@@ -43,7 +41,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Password */}
           <div className="input-group">
             <label htmlFor="password">Password</label>
 
@@ -55,7 +52,6 @@ const Register = () => {
             />
           </div>
 
-          {/* Confirm Password */}
           <div className="input-group">
             <label htmlFor="confirmPassword">
               Confirm Password
@@ -74,8 +70,8 @@ const Register = () => {
           </button>
 
           <p className="switch-page">
-            Already have an account?
-            <span> Login</span>
+            Already have an account?{" "}
+            <Link to="/login">Login</Link>
           </p>
         </form>
       </div>

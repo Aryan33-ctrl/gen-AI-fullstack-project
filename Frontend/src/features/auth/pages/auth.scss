@@ -9,7 +9,7 @@ body {
   background: #03131b;
 }
 
-.login-page {
+.auth-page {
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -40,9 +40,9 @@ body {
     border-radius: 50%;
   }
 
-  .login-container {
+  .auth-container {
     position: relative;
-    width: 400px;
+    width: 420px;
     padding: 45px;
     border-radius: 35px;
     background: rgba(255, 255, 255, 0.08);
@@ -106,7 +106,6 @@ body {
           color: #ddd;
           text-decoration: none;
           font-size: 14px;
-          transition: 0.3s;
 
           &:hover {
             color: #09d9ff;
@@ -114,7 +113,7 @@ body {
         }
       }
 
-      .login-btn {
+      .auth-btn {
         width: 100%;
         height: 52px;
         border: none;
@@ -135,15 +134,15 @@ body {
         }
       }
 
-      .signup-text {
+      .switch-page {
         text-align: center;
         margin-top: 30px;
         color: #ddd;
 
-        span {
+        a {
           color: white;
+          text-decoration: none;
           font-weight: 600;
-          cursor: pointer;
           transition: 0.3s;
 
           &:hover {

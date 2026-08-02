@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import "./auth.scss";
 
 const Login = () => {
@@ -8,13 +9,12 @@ const Login = () => {
   };
 
   return (
-    <main className="login-page">
-      {/* Background Glow */}
+    <main className="auth-page">
       <div className="top-glow"></div>
       <div className="bottom-glow"></div>
 
-      <div className="login-container">
-        <h1 className="logo">LOGIN</h1>
+      <div className="auth-container">
+        <h1 className="logo">SPACE</h1>
 
         <h2>Welcome Back</h2>
 
@@ -45,13 +45,13 @@ const Login = () => {
             <a href="/">Forgot Password?</a>
           </div>
 
-          <button type="submit" className="login-btn">
+          <button type="submit" className="auth-btn">
             Login
           </button>
 
-          <p className="signup-text">
-            Are You New Member?
-            <span> Sign Up</span>
+          <p className="switch-page">
+            Are You New Member?{" "}
+            <Link to="/register">Sign Up</Link>
           </p>
         </form>
       </div>
